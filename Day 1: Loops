@@ -1,0 +1,24 @@
+// complete the function
+function vowelsAndConsonants(s) {
+    var vowels = "", consonants = "";
+    for (ch of s)
+        if ("aeiou".includes(ch))
+            vowels = vowels + ch + "\n";
+    else
+        consonants = consonants + ch + "\n";
+    
+console.log(vowels + consonants);
+}
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+
+var input = "";
+
+process.stdin.on("data", function (line) {
+    input += line;
+});
+
+process.stdin.on("end", function () {
+     vowelsAndConsonants(input);
+});
